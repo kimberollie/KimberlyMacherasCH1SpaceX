@@ -1,0 +1,111 @@
+/*Code voor alle schermen*/
+body {
+	background-color: #064459;
+}
+img{
+	background-color: black;
+}
+
+/*telefoon*/
+
+@media screen and (min-width: 320px) { 
+
+	#grid-item1 { grid-area: header; }
+	#grid-item2 { grid-area: chart1; }
+	#grid-item3 { grid-area: chart2; }
+	#grid-item4 { grid-area: chart3; }
+
+
+	.grid-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		    'header '
+		    'chart1 '
+		    'chart2 '
+		    'chart3 ';
+	}
+
+	.chart {
+		max-width: 100%;
+	}
+
+	img {
+	 	max-width: 100vw;
+	}
+}
+
+/*Tablet portrait*/
+@media screen and (min-width: 768px) {
+
+	div {
+	  	max-width: 100%;
+	}
+	  
+	#grid-item1 { grid-area: header; }
+	#grid-item2 { grid-area: chart1; }
+	#grid-item3 { grid-area: chart2; }
+	#grid-item4 { grid-area: chart3; }
+
+
+	.grid-container {
+		display: grid;
+		grid-template-areas:
+		    'header '
+		    'chart1 '
+		    'chart2 '
+		    'chart3 ';
+	}
+
+	.chart {
+		width: 100%;
+	}
+
+}
+
+/*Tablet landscape*/
+@media screen and (min-width: 1024px) {
+
+	#grid-item1 { grid-area: header; }
+	#grid-item2 { grid-area: chart1; }
+	#grid-item3 { grid-area: chart2; }
+	#grid-item4 { grid-area: chart3; }
+
+
+	.grid-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+		    'header header '
+		    'chart1 chart2 '
+		    'chart3 chart3 ';
+
+	}
+
+
+}
+
+/*Desktop */
+@media screen and (min-width: 1440px) {
+	#grid-item1 { grid-area: header; }
+	#grid-item2 { grid-area: chart1; }
+	#grid-item3 { grid-area: chart2; }
+	#grid-item4 { grid-area: chart3; }
+
+
+	.grid-container {
+		display: grid;
+		grid-template-areas:
+		    'header header header'
+		    'chart1 chart2 chart3';
+	}
+
+	.chart {
+		width: 33vw;
+	}
+
+	img {
+		width: 100%;
+	}
+
+}

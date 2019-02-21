@@ -1,0 +1,103 @@
+<html>
+  <head>
+  	<link rel="stylesheet" type="text/css" href="CSS/opmaak.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      //grafiek bubbels
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawSeriesChart);
+
+      function drawSeriesChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['ID',      'Afstand',  'Planeten', ],
+          ['Aarde',   0,          10   ],
+          ['Schip',   127000000,  10   ],
+          ['Mars',    227900000,  10   ]
+          
+          
+        ]);
+
+        var options = {
+          title: '',
+          hAxis: {title: 'Afgelegde afstand'},
+          vAxis: {title: ' '},
+          bubble: {textStyle: {fontSize: 11}}
+        };
+
+        var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+        chart.draw(data, options);
+
+      }
+
+      //lijngrafiek
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Aantal dagen', 'Hoeveelheid water in liters'],
+            ['1',  10000],
+            ['2',   9605],
+            ['3',   9240],
+            ['4',   8889],
+            ['5',   8548],
+            ['6',   8227],
+            ['7',   7845],
+            ['8',   7581]
+          ]);
+
+          var options = {
+            title: 'Watervoorraad',
+            curveType: 'function',
+            legend: { position: 'bottom' }
+          };
+
+          var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+          chart.draw(data, options);
+       }
+
+       //Barchart
+        function drawBarChart() {
+            // Define the chart to be drawn.
+            var data = google.visualization.arrayToDataTable([
+               [' ', 'Tank vol', 'Tank leeg'],
+               [' ',  800,      200],
+              
+            ]);
+
+            var options = {title: 'Brandstof', isStacked:true};
+
+
+            // Instantiate and draw the chart.
+            var chart = new google.visualization.BarChart(document.getElementById('bar_chart'));
+            chart.draw(data, options);
+         }
+         google.charts.setOnLoadCallback(drawBarChart);
+
+        window.onresize = function () {
+        location = location;
+    }
+    </script>
+  </head>
+  <body>
+  	<div class="grid-container" class="chart">
+  		<div id="grid-item1">
+  			<img src="IMG/SpaceX.png">
+  		</div>
+    	<div id="grid-item2" class="chart">
+    		<div id="series_chart_div"></div> 	
+    	</div>	
+    	<div id="grid-item3" class="chart">
+    		<div id="curve_chart" ></div>
+    	</div>
+    	<div id="grid-item4" class="chart">
+    		<div id="bar_chart" ></div>
+    	</div>
+  	</div>
+
+
+  </body>
+</html>
+
+
